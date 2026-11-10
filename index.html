@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Student Management System</h1>
+    <p>Manage students, marks and attendance</p>
+</header>
+
+<div class="container">
+
+    <section class="stats">
+        <div class="stat-card">
+            <h3>Total Students</h3>
+            <h2 id="totalStudents">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <h3>Average Marks</h3>
+            <h2 id="averageMarks">0</h2>
+        </div>
+
+        <div class="stat-card">
+            <h3>Topper</h3>
+            <h2 id="topperName">-</h2>
+        </div>
+    </section>
+
+    <section class="panel">
+        <h2>Add New Student</h2>
+
+        <form id="studentForm">
+
+            <input type="number" id="id"
+                   placeholder="Student ID" required min="1">
+
+            <input type="text" id="name"
+                   placeholder="Student Name" required>
+
+            <input type="email" id="email"
+                   placeholder="Email Address" required>
+
+            <input type="text" id="course"
+                   placeholder="Course Name" required>
+
+            <input type="number" id="marks"
+                   placeholder="Marks (0-100)"
+                   required min="0" max="100" step="0.01">
+
+            <input type="number" id="attendance"
+                   placeholder="Attendance (0-100)"
+                   required min="0" max="100">
+
+            <select id="status">
+                <option value="ACTIVE">Active</option>
+                <option value="INACTIVE">Inactive</option>
+                <option value="COMPLETED">Completed</option>
+            </select>
+
+            <button type="submit">Add Student</button>
+        </form>
+    </section>
+
+    <section class="panel">
+        <h2>Search Students</h2>
+        <input type="text" id="search"
+               placeholder="Search by ID, name or course...">
+    </section>
+
+    <section class="panel">
+        <h2>Student Records</h2>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                        <th>Marks</th>
+                        <th>Grade</th>
+                        <th>Attendance</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="studentTable"></tbody>
+            </table>
+        </div>
+    </section>
+
+</div>
+
+<div id="message"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
